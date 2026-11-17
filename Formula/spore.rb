@@ -4,29 +4,30 @@
 class Spore < Formula
   desc "Distributed AI inference node for the Spore network"
   homepage "https://sporeintel.com"
-  version "0.7.17"
+  version "0.7.18"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://api.sporeintel.com/api/releases/0.7.17/macos/arm64/spore_0_7_17_macos_arm64_r78zc8ev9c.tar.gz"
-      sha256 "315e192785a6f0737f01b8004a6428569fdd9f38293b23fa1434e426a61e4803"
+      url "https://api.sporeintel.com/api/releases/0.7.18/macos/arm64/spore_0_7_18_macos_arm64_lm3spxfbof.tar.gz"
+      sha256 "a21d2fde214b1db81f6955c88daa09a4417e861e2c278d305d0a1e6de79d57cf"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://api.sporeintel.com/api/releases/0.7.17/linux/aarch64/spore_0_7_17_linux_aarch64_1qx6910tx6.tar.gz"
-      sha256 "2ea8254bea1e15e29f4f27d8cc9d6eb7d19df697a9d3b434e247b42e6d0c2143"
+      url "https://api.sporeintel.com/api/releases/0.7.18/linux/aarch64/spore_0_7_18_linux_aarch64_qyylp0olhj.tar.gz"
+      sha256 "ab4add89be4b333681b00ac55b7745bf3d8ed10ef372b8027c6debe6f6f5c0b1"
     end
     on_intel do
-      url "https://api.sporeintel.com/api/releases/0.7.17/linux/x86_64/spore_0_7_17_linux_x86_64_o2p2e3ozt1.tar.gz"
-      sha256 "e52544f665749804c4009af26928e6dbe7789a5733d2587a0926d5a31338859d"
+      url "https://api.sporeintel.com/api/releases/0.7.18/linux/x86_64/spore_0_7_18_linux_x86_64_sgnr479ilk.tar.gz"
+      sha256 "f6c75c79a71dcc3316baceae5fde4c0c5e2a3bc0422648b1b9396c53ba86d843"
     end
   end
 
   def install
     bin.install "spore"
+    libexec.install "libexec/automation-pi-runner"
   end
 
   def caveats
@@ -35,11 +36,15 @@ class Spore < Formula
         1. Authenticate: spore auth
         2. Start the node: spore start
 
+      Automations with runtime: pi use the bundled Node under
+      libexec/automation-pi-runner/runtime/ (no system Node or npm install).
+
       For more information, visit https://sporeintel.com/docs
     EOS
   end
 
   test do
     assert_match "spore", shell_output("#{bin}/spore --version")
+    assert_predicate libexec/"automation-pi-runner/src/run.mjs", :exist?
   end
 end
