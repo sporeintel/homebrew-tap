@@ -4,24 +4,24 @@
 class Spore < Formula
   desc "Distributed AI inference node for the Spore network"
   homepage "https://sporeintel.com"
-  version "0.7.19"
+  version "0.7.20"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://api.sporeintel.com/api/releases/0.7.19/macos/arm64/spore_0_7_19_macos_arm64_x2fzavhhq1.tar.gz"
-      sha256 "6e0027f21776a30ea0071b35f61ceabe3501d770c4059b013609bb014920ee8d"
+      url "https://api.sporeintel.com/api/releases/0.7.20/macos/arm64/spore_0_7_20_macos_arm64_uefjrpeuc2.tar.gz"
+      sha256 "47c871655b4aa258683fe894fb46f4347068ff70e501be6736709eb7157526e9"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://api.sporeintel.com/api/releases/0.7.19/linux/aarch64/spore_0_7_19_linux_aarch64_xgy34s3voy.tar.gz"
-      sha256 "dfce0fe85805ea32ec10e3d260fa9e73783221e0b3b65ef77bc48224fed224c9"
+      url "https://api.sporeintel.com/api/releases/0.7.20/linux/aarch64/spore_0_7_20_linux_aarch64_hmy1lc4sxd.tar.gz"
+      sha256 "74d7f668905554d6cd918876d4895ae403c78b0fe65d526f6bdecac0904e0600"
     end
     on_intel do
-      url "https://api.sporeintel.com/api/releases/0.7.19/linux/x86_64/spore_0_7_19_linux_x86_64_b0p4iysa0v.tar.gz"
-      sha256 "012b0a6b163fef5751ba6c99d2516b62d15d19e11b063ce30f1d8f6c10d083d0"
+      url "https://api.sporeintel.com/api/releases/0.7.20/linux/x86_64/spore_0_7_20_linux_x86_64_c9m3ywfqah.tar.gz"
+      sha256 "cbc633d0c4c361627ac2740303a049d7314550a5bfef107f0894848435ab9230"
     end
   end
 
