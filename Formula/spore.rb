@@ -27,6 +27,7 @@ class Spore < Formula
 
   def install
     bin.install "spore"
+    # Pi automation runner (bundled Node + deps). Required for runtime: pi.
     libexec.install "libexec/automation-pi-runner"
   end
 
